@@ -16,12 +16,12 @@ class ExampleTest extends TestCase
     {
         $locationService = new LocationService();
 
-        $fromLat = 51.4822;
-        $fromLong = -3.1745;
-        $toLat = 51.4781;
-        $toLong = -3.1716;
+        $fromLat = 53.4409475;
+        $fromLong = -2.2727642;
+        $toLat = 53.4400381;
+        $toLong = -2.2669763;
 
-        $this->assertEquals(522, round($locationService->getDistanceBetweenLatLong(
+        $this->assertEquals(396, round($locationService->getDistanceBetweenLatLong(
             $fromLat,
             $fromLong,
             $toLat,
@@ -33,15 +33,15 @@ class ExampleTest extends TestCase
     {
         $locationService = new LocationService();
 
-        $fromLat = 51.4822;
-        $fromLong = -3.1745;
-        $toLat = 51.4781;
-        $toLong = -3.1716;
+        $fromLat = 53.4409475;
+        $fromLong = -2.2727642;
+        $toLat = 53.4400381;
+        $toLong = -2.2669763;
 
         $location1 = Location::factory(['latitude' => $fromLat, 'longitude' => $fromLong])->create();
         $location2 = Location::factory(['latitude' => $toLat, 'longitude' => $toLong])->create();
 
-        $this->assertEquals(522, round($locationService->getDistanceBetweenLocations(
+        $this->assertEquals(396, round($locationService->getDistanceBetweenLocations(
             $location1,
             $location2
         )));
@@ -52,12 +52,12 @@ class ExampleTest extends TestCase
         $locationService = new LocationService();
 
         $toFind = Location::factory([
-            'latitude' => 53.44094759890932,
-            'longitude' => -2.2727642978804594,
+            'latitude' => 53.4409475,
+            'longitude' => -2.2727642,
         ])->create();
 
-        $lat = 53.44003818017504;
-        $long = -2.2669763614681724;
+        $lat = 53.4400381;
+        $long = -2.2669763;
         $radius = 500; // meters
 
         $locations = $locationService->getLocationsWithinRadius($lat, $long, $radius);

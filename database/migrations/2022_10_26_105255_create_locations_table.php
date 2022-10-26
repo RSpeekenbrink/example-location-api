@@ -24,8 +24,8 @@ return new class extends Migration
         Schema::create('locations', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->double('latitude');
-            $table->double('longitude');
+            $table->double('latitude', 9, 7);
+            $table->double('longitude', 10, 7);
             $table->timestamps();
         });
     }
@@ -35,11 +35,11 @@ return new class extends Migration
         $locations = $this->readCSVData(database_path('migrations/datasets/data.csv'));
 
         foreach ($locations as $location) {
-           Location::factory([
+            Location::factory([
                'name' => $location[0],
                'latitude' => $location[1],
                'longitude' => $location[2],
-           ])->create();
+            ])->create();
         }
     }
 
