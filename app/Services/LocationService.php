@@ -56,7 +56,7 @@ class LocationService
                            sin( radians( latitude ) ) )
                          ) AS distance", [self::EARTH_RADIUS, $latitude, $longitude, $latitude])
             ->having("distance", "<=", $radius)
-            ->orderBy("distance",'asc')
+            ->orderBy("distance", 'asc')
             ->get();
     }
 }
