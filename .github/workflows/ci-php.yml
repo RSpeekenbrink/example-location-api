@@ -30,7 +30,7 @@ jobs:
     env:
       DB_PORT: 5432
       DB_CONNECTION: mysql
-      DB_DATABASE: location-api
+      DB_DATABASE: location_api
       DB_USERNAME: root
       DB_HOST: 127.0.0.1
       DB_PASSWORD: root
@@ -56,7 +56,7 @@ jobs:
       - name: Init Database
         run: |
           sudo systemctl start mysql.service
-          mysql -uroot -h127.0.0.1 -proot -e 'CREATE DATABASE IF NOT EXISTS location-api;'
+          mysql -uroot -h127.0.0.1 -proot -e 'CREATE DATABASE IF NOT EXISTS location_api;'
       - name: Migrate Database
         run: php artisan migrate
       - name: Build VITE Manifest
