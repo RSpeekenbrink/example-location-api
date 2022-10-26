@@ -12,6 +12,7 @@ Original assesment: https://bitbucket.org/nextgreencar/zap-map-technical-intervi
     - [Building the frontend](#building-the-vuejs-views-and-installing-npm-packages)
 - [Running the tests](#running-the-tests)
 - [Code Style](#code-style)
+- [API Routes](#api-routes)
 
 ## Getting Started
 
@@ -102,3 +103,27 @@ To format your code autmatically you can run
 ```bash
 make style
 ```
+
+## API Routes:
+
+### GET: /api/locations/radius
+
+Return all locations in an x radius from given latitude/longitude
+
+| Parameter |         Description         |
+|-----------|:---------------------------:|
+| radius    |      Radius in meters       |
+| latitude  | Latitude of start location  |
+| longitude | Longitude of start location |
+
+Returns array of:
+
+| Parameter |            Description             |
+|-----------|:----------------------------------:|
+| name      |          Name of location          |
+| latitude  |        Latitude of location        |
+| longitude |       Longitude of location        |
+| distance  | Distance from given start location |
+
+
+
